@@ -1,0 +1,4 @@
+interface:
+  display_name: "Update QM"
+  short_description: "Merge upstream qm into this downstream"
+  default_prompt: "Use $update-qm to sync this independent downstream from upstream qm without writing upstream."

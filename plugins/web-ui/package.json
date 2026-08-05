@@ -1,0 +1,52 @@
+{
+  "name": "qm-web-ui-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Web UI surface plugin for qm. Custom chat shell over a thin node:http transport that talks only to the core HTTP API.",
+  "engines": {
+    "node": ">=26.5.1",
+    "npm": ">=12.0.2"
+  },
+  "packageManager": "npm@12.0.2",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "node --env-file-if-exists=.env server/index.ts",
+    "start": "npm run build && npm run serve",
+    "test": "NODE_ENV=test ALLOW_UNSIGNED_TEST_IDENTITY=1 node --test \"test/**/*.test.ts\"",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.server.json --noEmit && tsc -p tsconfig.test.json --noEmit"
+  },
+  "dependencies": {
+    "@date-fns/tz": "^1.5.0",
+    "@earendil-works/pi-agent-core": "0.83.0",
+    "@earendil-works/pi-ai": "0.83.0",
+    "@earendil-works/pi-web-ui": "0.75.3",
+    "@mariozechner/mini-lit": "^0.2.1",
+    "date-fns": "^4.4.0",
+    "dockview-core": "^7.0.4",
+    "dompurify": "^3.4.12",
+    "jszip": "^3.10.1",
+    "lit": "^3.3.3",
+    "lru-cache": "^11.5.2",
+    "lucide": "^1.28.0",
+    "marked": "^18.0.7",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^28.0.3",
+    "@types/node": "^26.1.2",
+    "jsdom": "^30.0.1",
+    "katex": "^0.18.1",
+    "typescript": "6.0.3",
+    "vite": "^8.2.0"
+  },
+  "overrides": {
+    "@earendil-works/pi-web-ui": {
+      "@earendil-works/pi-ai": "$@earendil-works/pi-ai"
+    },
+    "@mariozechner/mini-lit": {
+      "marked": "^18.0.7"
+    }
+  }
+}

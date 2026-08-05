@@ -1,0 +1,21 @@
+{
+  "name": "qm-admin-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Admin surface plugin for qm. A thin web UI over the core admin API (governance: command policy, SOUL, egress). Zero runtime deps.",
+  "engines": {
+    "node": ">=26.5.1",
+    "npm": ">=12.0.2"
+  },
+  "packageManager": "npm@12.0.2",
+  "scripts": {
+    "start": "node src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "NODE_ENV=test ALLOW_UNSIGNED_TEST_IDENTITY=1 node --test"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "typescript": "6.0.3"
+  }
+}
